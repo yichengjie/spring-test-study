@@ -1,5 +1,8 @@
 package com.yicj.study.webmvc.config;
 
+import com.yicj.study.webmvc.service.HelloService;
+import com.yicj.study.webmvc.service.impl.HelloServiceImpl;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -9,4 +12,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class AppConfig {
 
+    @Bean
+    public HelloService helloService(){
+
+        return new HelloServiceImpl() ;
+    }
 }
