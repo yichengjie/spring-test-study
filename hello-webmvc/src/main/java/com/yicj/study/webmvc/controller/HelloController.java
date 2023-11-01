@@ -2,6 +2,7 @@ package com.yicj.study.webmvc.controller;
 
 import com.yicj.study.webmvc.model.form.HelloCreateForm;
 import com.yicj.study.webmvc.service.HelloService;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,10 +13,11 @@ import org.springframework.web.bind.annotation.*;
  */
 @Slf4j
 @RestController
+@AllArgsConstructor
 public class HelloController {
 
-    @Autowired
-    private HelloService helloService ;
+//    @Autowired
+    private final HelloService helloService ;
 
     @GetMapping("/hello/index")
     public String index(){

@@ -13,6 +13,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import org.springframework.test.context.junit.jupiter.web.SpringJUnitWebConfig;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
@@ -33,12 +34,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  */
 @Slf4j
 // 这里如果不设置为启动类，则会报SqlSessionFactory的错误
-@SpringJUnitWebConfig(WebMvcApplication.class)
+//@SpringJUnitWebConfig(WebMvcApplication.class)
+//-------------------------------------
+//@SpringBootTest(classes = WebMvcApplication.class)
 //---------------------------------------------
-//@SpringJUnitWebConfig(HelloController.class)
 //@WebMvcTest(HelloController.class)
-//@WebMvcTest(controllers={HelloController.class})
-//@SpringBootTest(classes = WebApplicationContext.class)
+//-------------------------------------------
+@SpringJUnitConfig
 public class HelloControllerTest {
 
     @MockBean
@@ -49,8 +51,9 @@ public class HelloControllerTest {
     private ObjectMapper objectMapper ;
 
     @BeforeEach
-    public void init(WebApplicationContext wac){
-        this.mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
+    public void init(/*WebApplicationContext wac*/){
+        //this.mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
+        this.mockMvc = MockMvcBuilders.standaloneSetup(new HelloController(helloService)).build();
         objectMapper = new ObjectMapper();
     }
 
