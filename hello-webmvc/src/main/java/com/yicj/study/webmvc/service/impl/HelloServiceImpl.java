@@ -19,13 +19,13 @@ public class HelloServiceImpl implements HelloService {
     @Autowired
     private UserRepository userRepository ;
 
-//    @Autowired
-//    private UserMapper userMapper;
+    @Autowired
+    private UserMapper userMapper;
 
     @Override
     public String hello(String name) {
-        //User user = userMapper.selectById(1);
-        //log.info("user : {}", user);
+        User user = userMapper.selectById(1);
+        log.info("user : {}", user);
         userRepository.hello(name) ;
         return "hello, " + name;
     }

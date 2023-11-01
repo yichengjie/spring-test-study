@@ -12,20 +12,20 @@ import org.springframework.web.bind.annotation.*;
  */
 @Slf4j
 @RestController
-@RequestMapping("/hello")
 public class HelloController {
 
     @Autowired
     private HelloService helloService ;
 
-    @GetMapping("/index")
+    @GetMapping("/hello/index")
     public String index(){
         String retValue = helloService.hello("张三");
         log.info("--------------> ret value : {}", retValue);
         return "hello world" ;
     }
 
-    @PostMapping("/create")
+    @PostMapping("/hello/create")
+    //@PostMapping("/v1.0/sales/customReport/list4Page")
     public String create(@RequestBody HelloCreateForm form){
         String retValue = helloService.hello("张三");
         log.info("-----------> create name:  {}", form.getName());
