@@ -26,8 +26,7 @@ public class HelloController {
         return "hello world" ;
     }
 
-    @PostMapping("/hello/create")
-    //@PostMapping("/v1.0/sales/customReport/list4Page")
+    @PostMapping(value = "/hello/create"/*, consumes = "application/json", produces = "application/json"*/)
     public String create(@RequestBody HelloCreateForm form){
         String retValue = helloService.hello("张三");
         log.info("-----------> create name:  {}", form.getName());
