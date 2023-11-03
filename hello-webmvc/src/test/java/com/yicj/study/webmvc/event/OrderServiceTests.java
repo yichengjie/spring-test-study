@@ -17,7 +17,6 @@ import static org.assertj.core.api.Assertions.assertThat;
  * @date 2023/10/9 21:49
  */
 @Slf4j
-//@SpringJUnitConfig(classes = AppConfig.class)
 @SpringJUnitConfig(AppConfig.class)
 @RecordApplicationEvents
 class OrderServiceTests {

@@ -5,6 +5,7 @@ import com.yicj.study.webmvc.service.HelloService;
 import com.yicj.study.webmvc.service.impl.HelloServiceImpl;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -15,9 +16,4 @@ import org.springframework.context.annotation.Configuration;
 @MapperScan("com.yicj.study.webmvc.repository.mapper")
 public class AppConfig {
 
-//    @Bean
-//    public HelloService helloService(){
-//
-//        return new HelloServiceImpl() ;
-//    }
 }

@@ -1,5 +1,6 @@
 package com.yicj.study.webmvc.repository.mapper;
 
+import com.baomidou.mybatisplus.test.autoconfigure.MybatisPlusTest;
 import com.yicj.study.webmvc.repository.entity.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,8 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.util.Assert;
 import java.util.List;
 
-
-@SpringBootTest
+@MybatisPlusTest
 class UserMapperTest {
     @Autowired
     private UserMapper userMapper;
