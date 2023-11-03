@@ -11,8 +11,6 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
-import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 /**
  * @author yicj
@@ -20,27 +18,24 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
  */
 @Slf4j
 @MybatisPlusTest
-@SpringJUnitConfig
 public class OrderServiceNestedTest {
+
+    @Autowired
+    HelloService helloService;
 
     @Configuration
     // 如果是内部类，这里需要手动添加注解@MapperScan
     @MapperScan("com.yicj.study.webmvc.repository.mapper")
     static class Config {
-        // this bean will be injected into the OrderServiceTest class
         @Bean
         HelloService helloService(UserRepository userRepository, UserMapper userMapper) {
             return new HelloServiceImpl();
         }
-
         @Bean
         UserRepository userRepository(){
             return new UserRepository() ;
         }
     }
-
-    @Autowired
-    HelloService helloService;
 
     @Test
     void testOrderService() {

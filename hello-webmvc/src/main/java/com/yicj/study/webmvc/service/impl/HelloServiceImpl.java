@@ -22,11 +22,6 @@ public class HelloServiceImpl implements HelloService {
     @Autowired
     private UserMapper userMapper;
 
-//    public HelloServiceImpl(UserRepository userRepository, UserMapper userMapper) {
-//        this.userRepository = userRepository;
-//        this.userMapper = userMapper;
-//    }
-
     @Override
     public String hello(String name) {
         User user = userMapper.selectById(1);

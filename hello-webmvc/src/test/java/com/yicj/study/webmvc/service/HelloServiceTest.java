@@ -16,7 +16,7 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
  */
 @Slf4j
 @MybatisPlusTest
-@SpringJUnitConfig
+//@SpringJUnitConfig
 @Import({UserRepository.class, HelloServiceImpl.class})
 public class HelloServiceTest {
 
