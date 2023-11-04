@@ -7,4 +7,6 @@
     ```text
     @ContextConfiguration(classes = HelloWorldApplication.class)
     ```
+4. @Sql初始化内存内存数据库
+5. @Sql({"classpath:sql/DDL_init.sql", "classpath:sql/DML_init.sql"})
    
